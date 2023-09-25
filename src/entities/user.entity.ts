@@ -1,5 +1,6 @@
 import { Column, CreateDateColumn, Entity, OneToMany } from 'typeorm';
 import { CommonPKEntity } from './common/common.entity';
+import { ClubEntity } from './club.entity';
 
 @Entity('User')
 export class UserEntity extends CommonPKEntity {
@@ -23,4 +24,7 @@ export class UserEntity extends CommonPKEntity {
 
   @CreateDateColumn({ type: 'timestamp', nullable: false })
   dateOfBirth: Date;
+
+  @OneToMany(() => ClubEntity, (club) => club.user)
+  clubs: ClubEntity[];
 }

@@ -1,7 +1,4 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 // TypeOrmModule.forRoot() 메서드에 전달되는 설정 객체의 타입이 TypeOrmModuleOptions와 호환되어야 한다
 export const DATABASE_CONFIG: TypeOrmModuleOptions = {
